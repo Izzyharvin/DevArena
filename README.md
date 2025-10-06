@@ -28,6 +28,6 @@ Users can solve algorithm challenges, earn XP, and climb the leaderboard — lik
 👨‍💻 Author
 
 Israel Harvin
-🎮 Indie Game & Software Developer
-🌐 Breaking Limits Multimedia House LLC
-📧 Contact on GitHub
+🎮 Indie Game & Software Developer <br>
+🌐 Breaking Limits Multimedia House LLC (https://breakinglimitsmmh.com/) <br>
+📧 Contact on GitHub <br>
