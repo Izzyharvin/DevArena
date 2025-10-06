@@ -11,7 +11,7 @@ Server = Next.js (API routes)
 
 TypeScript everywhere
 
-Why it’s great:
+# Why it’s great:
 
 Uses your game dev mindset (progression, leveling)
 
