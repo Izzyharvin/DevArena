@@ -3,20 +3,20 @@ Concept: Users complete coding puzzles (like mini boss fights). Each puzzle’s 
 
 * Leaderboards = database (Postgres)
 
-Challenges = stored JSON or Markdown
+* Challenges = stored JSON or Markdown
 
-Auth = NextAuth
+* Auth = NextAuth
 
-Server = Next.js (API routes)
+* Server = Next.js (API routes)
 
-TypeScript everywhere
+* TypeScript everywhere
 
 # Why it’s great:
 
-Uses your game dev mindset (progression, leveling)
+* Uses your game dev mindset (progression, leveling)
 
-Shows full stack engineering
+* Shows full stack engineering
 
-Clean code (TypeScript + tests)
+* Clean code (TypeScript + tests)
 
-Stretch features: Realtime updates using Socket.io and SSR with caching.
+* Stretch features: Realtime updates using Socket.io and SSR with caching.
