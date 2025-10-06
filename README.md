@@ -22,6 +22,7 @@ Users can solve algorithm challenges, earn XP, and climb the leaderboard — lik
 
 ✅ Master **TypeScript**, **Next.js App Router**, and **Prisma**  
 ✅ Build a **real full-stack app** (API + DB + UI)  
-✅ Prepare a portfolio project for **TokyoDev** job applications  
+✅ Prepare a portfolio project
+
 
 
