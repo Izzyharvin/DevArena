@@ -13,7 +13,7 @@ Concept: Users complete coding puzzles (like mini boss fights). Each puzzle’s 
 
 # Why it’s great:
 
-* Uses your game dev mindset (progression, leveling)
+* Uses my game dev mindset (progression, leveling)
 
 * Shows full stack engineering
 
