@@ -25,4 +25,9 @@ Users can solve algorithm challenges, earn XP, and climb the leaderboard — lik
 ✅ Prepare a portfolio project
 
 
+👨‍💻 Author
 
+Israel Harvin
+🎮 Indie Game & Software Developer
+🌐 Breaking Limits Multimedia House LLC
+📧 Contact on GitHub
