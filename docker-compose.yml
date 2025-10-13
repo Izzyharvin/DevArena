@@ -11,7 +11,7 @@ services:
       POSTGRES_PASSWORD: dev     # password for the database
       POSTGRES_DB: devarena      # database name that will be created automatically
 
-    # Map the database port inside the container (5432) to your local machine’s port (5432)
+    # Map the database port inside the container (5432) to your local machineâ€™s port (5432)
     ports:
       - "5432:5432"
 
