@@ -1,0 +1,63 @@
+// This file defines the database schema for DevArena using Prisma ORM.
+// Each "model" here becomes a table in PostgreSQL after migration.
+
+generator client {
+  // Generates Prisma Client JS for interacting with your database in TypeScript/Node
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  // Defines the database connection (linked to your .env DATABASE_URL)
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// User table: stores registered player info and XP progression
+model User {
+  id          String       @id @default(cuid())       // Unique user ID (auto-generated)
+  email       String       @unique                   // User email (unique for each)
+  name        String?                                // Optional display name
+  image       String?                                // Optional profile image URL
+  xp          Int          @default(0)               // Experience points
+  level       Int          @default(1)               // User level (derived from XP)
+  createdAt   DateTime     @default(now())           // Auto timestamp on creation
+  submissions Submission[]                           // Link to user’s submissions
+}
+
+// Challenge table: defines each coding problem
+model Challenge {
+  id          String       @id @default(cuid())       // Unique challenge ID
+  slug        String       @unique                    // URL-friendly identifier
+  title       String                                   // Display title
+  promptMd    String                                   // Markdown problem prompt
+  difficulty  Difficulty                               // Enum value (EASY, MEDIUM, HARD)
+  tags        String[]                                 // Related tags (e.g. ["array", "hash"])
+  points      Int          @default(10)                // Points rewarded for solving
+  createdAt   DateTime     @default(now())             // Timestamp for when challenge added
+  submissions Submission[]                             // Relation: all submissions for this challenge
+}
+
+// Submission table: records each user’s solution attempt
+model Submission {
+  id          String     @id @default(cuid())          // Unique submission ID
+  userId      String                                   // FK to User
+  challengeId String                                   // FK to Challenge
+  code        String                                   // User’s code submission
+  passed      Boolean                                  // Whether solution passed test cases
+  passedCount Int        @default(0)                   // Number of passed tests
+  totalCount  Int        @default(0)                   // Total tests attempted
+  createdAt   DateTime   @default(now())               // Timestamp of submission
+
+  // Relations for Prisma to join data easily
+  user        User       @relation(fields: [userId], references: [id])
+  challenge   Challenge  @relation(fields: [challengeId], references: [id])
+
+  @@index([userId, challengeId])                       // Performance optimization index
+}
+
+// Difficulty enum: defines challenge difficulty levels
+enum Difficulty {
+  EASY
+  MEDIUM
+  HARD
+}
