@@ -39,3 +39,17 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Visual Studio / Visual Studio Code settings and caches
+.vs/
+.vscode/
+*.user
+*.suo
+*.vsidx
+*.dbmdl
+*.jfm
+
+# Docker-related artifacts (avoid tracking volumes or build layers)
+**/pgdata/
+docker-data/
+*.pid

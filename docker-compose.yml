@@ -1,0 +1,35 @@
+# Root section for Docker Compose services (each "service" = one container)
+services:
+
+    # Define the PostgreSQL database container named "db"
+    db:
+
+        # Use the official Postgres image (version 16) from Docker Hub
+        image: postgres:16
+
+        # Environment variables passed to the Postgres container
+        environment:
+
+        # Database username (you’ll use this in Prisma’s DATABASE_URL)
+          POSTGRES_USER: dev
+
+          # Database password
+          POSTGRES_PASSWORD: dev
+
+          # Database name automatically created at startup
+          POSTGRES_DB: devarena
+
+        # Port mapping: host_port:container_port
+        # Exposes Postgres so your app on the host (and Prisma) can connect to it
+        ports:
+          - "5432:5432"
+
+        # Volume mapping: keeps database files persistent even if the container stops
+        # "pgdata" below is the named volume defined at the bottom of the file
+        volumes:
+          - pgdata:/var/lib/postgresql/data
+
+# Define named volumes (shared storage areas managed by Docker)
+# This ensures your DB data survives `docker compose down`
+volumes:
+    pgdata:
